@@ -1,0 +1,97 @@
+﻿@model TIP.ChefsCorner.BL.Recipe
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: large;
+        width: 50%;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        height: auto;
+    }
+
+    .center1 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+
+</style>
+<div class="container">
+    <div style="text-align: center">
+        <h1 style="margin-left:40px;">@Html.DisplayFor(model => model.Name)</h1>
+        <hr />
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            
+
+            @{
+                var src = String.Format("data:image/gif;base64,{0}", Model.ConvertedImage);
+            }
+            <dt>
+                <img src="@src" alt="Alt" class="center" ) />
+            </dt>
+            <br />
+        </div>
+        
+        <div class="col-lg-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Ingredients)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ingredients)
+            </dd>
+        </div>
+                </dl>
+            
+
+       
+    </div>
+    <div><div class="col-lg-12">
+
+    <div class="center">
+        <dl class="dl-horizontal">
+
+            
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Directions)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Directions)
+            </dd>
+    </div>
+</div>
+    <div style="text-align: center">
+        <hr />
+        <p style="margin-left:40px;">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

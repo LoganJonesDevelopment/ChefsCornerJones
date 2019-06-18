@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Chef's Corner</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+
+<!--CSS code for the layout of the page-->
+<body>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #f2ffcc;
+        }
+
+            .topnav a {
+                float: left;
+                color: #444444;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+
+                .topnav a:hover {
+                    background-color: white;
+                    color: #444444;
+                }
+
+                .topnav a.active {
+                    background-color: white;
+                    color: white;
+                }
+
+        .topnav-right {
+            float: right;
+        }
+
+        Footer {
+            font-weight: bold;
+            color: #606060;
+        }
+    </style>
+    <hr style="border: 6px solid#86b300;" />
+
+    @RenderBody()
+
+    <hr style="border: 6px solid#86b300;" />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Chef's Corner</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

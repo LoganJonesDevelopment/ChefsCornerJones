@@ -1,0 +1,45 @@
+﻿@model TIP.ChefsCorner.BL.IngredientSubstitutions
+
+
+
+<div class="container bodyContainer">
+    <div class="substituteBackground">
+
+
+       
+            <h1 style="text-align:center;" class="m-b-50">Ingredient Substitutions </h1>
+        
+
+
+        @using (Html.BeginForm("Index", "IngredientSubstitution"))
+        {
+            <input type="text" placeholder="Enter Ingredient Name" name="ingredient" class="search" />
+            <input type="submit" class="button" value="Go" />
+
+            <div class="mx-5 section">
+                <h2 class="mb-5 uppercase">@Html.DisplayFor(model => model.ingredient)</h2>
+                <h3>@ViewBag.Message</h3>
+            </div>
+
+            if (Model != null)
+            {
+
+
+                foreach (var item in Model.substitutes)
+                {
+
+
+                    <h3 class="list-group-horizontal-lg mb-5">@Html.DisplayFor(model => item)</h3>
+
+
+
+                }
+            }
+
+        }
+
+    </div>
+</div>
+
+
+

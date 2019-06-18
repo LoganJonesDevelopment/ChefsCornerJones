@@ -1,0 +1,521 @@
+﻿
+/* Body */
+body {
+    font-family: source-sans-pro;
+    background-color: #f2ffcc !important;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-style: normal;
+    font-weight: 100;
+    width: 100%;
+}
+
+/* Container */
+.bodyContainer {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.top {
+    width: 100%;
+}
+
+/* Body Section */
+.top {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../images/background.jpg");
+
+    padding-top: 20%;
+    padding-bottom: 10%;
+    width: 100% !important;
+}
+
+
+.tagline {
+    font-size: 5em;
+    text-align: center;
+    color: #444444;
+    margin-top: .2em;
+    margin-left: 45%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 3em;
+    text-align: center;
+    margin-left: 45%;
+    color: #444444;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.gallery {
+    clear: both;
+    display: inline-block;
+    width: 100% !important;
+    background-color: rgba(255,255,255,0.42);
+    padding-top: 0px;
+
+    margin-bottom: 0px;
+}
+
+.ingredientSearch {
+    width: 100%;
+    /*height: 800px;*/
+}
+
+.ingredients {
+    /*width:100%;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cookBook {
+    width: 100%;
+    display: block;
+}
+
+.center {
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 100%;
+}
+
+form {
+    text-align: center
+}
+
+.search {
+    height: 30px;
+    width: 250px;
+    margin: 30px 0 30px 0;
+   
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.substituteBackground {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../images/ingredbackground.jpg");
+    height: 50em;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+}
+
+.button {
+    height: 30px;
+    width: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+    align-content: center;
+}
+
+.recipeRow {
+   text-align:center;
+  
+}
+.recipeborder{
+    border: 2px solid black;
+}
+.RecipeImg {
+    background-repeat: repeat;
+    background-size: contain;
+    
+    background-image: url('../Images/meal.png');
+}
+.recipeSearch {
+   font-size: 2em;
+   text-align: center;
+  margin: 25px 0 25px 0
+
+}
+
+
+.printSec {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60em;
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+
+.printList {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.ingrSub {
+    text-align: center;
+    margin-top: 5em;
+    margin-left: 2em;
+}
+
+.social {
+    margin-bottom: 2em;
+}
+
+.socialmedia {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.recipeLink {
+    font-size: 4em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+footer p {
+    margin-left: 2%;
+}
+
+
+.sub {
+    text-align: center;
+}
+
+.bottomnav {
+    overflow: hidden;
+    background-color: #f2ffcc;
+   text-align:center;
+}
+
+    .bottomnav a {
+        position: relative;
+        color: #444444;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 2em;
+
+    }
+
+        .bottomnav a:hover {
+            background-color: white;
+            color: #444444;
+        }
+
+        .bottomnav a.active {
+            background-color: white;
+            color: white;
+        }
+
+.bottomnav-right {
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 320px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .myNav {
+        float: right !important;
+        display: block;
+    }
+
+    .top {
+        background-size: cover;
+        width: 100%;
+    }
+
+    .tagline {
+        font-size: 2em;
+        text-align: center;
+        color: #000000;
+        margin-top: .2em;
+        margin-left: 3%;
+    }
+
+    .subtitle {
+        font-size: 2em;
+        text-align: center;
+        margin-left: 3%;
+    }
+
+    .ingredients {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 2em;
+    }
+
+    .cookBook {
+        height: unset;
+    }
+
+    .recipeLink {
+        margin-top: 1.5em;
+    }
+
+    .ingredientSearch {
+        height: 2em;
+        margin-top: 2em;
+    }
+
+    .ingredients {
+        height: 30em;
+        width: 100%;
+    }
+
+    .ingredientSearch .button {
+        margin: 1em;
+    }
+
+    .recipeRow {
+        margin-top: 2em;
+       
+    }
+
+    .recipeLink {
+        font-size: 2em;
+    }
+
+    .recipeSearch {
+        margin: 2em;
+        font-size: 2em;
+    }
+
+    .printSec {
+        background-size: contain;
+        height: 20em;
+        margin-top: 2em;
+    }
+
+        .printSec .printList {
+            margin-top: 2em;
+        }
+
+        .printSec .ingrSub {
+            text-align: left;
+            margin: 0;
+            /*margin-top: 2em;*/
+        }
+    .bottomnav a {
+        position: relative;
+        color: #444444;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 2em;
+    }
+}
+/*
+
+.footer_column {
+	width: 100%;
+	margin-top: 0px;
+}
+*/
+
+
+/* Small Tablets */
+@media (min-width: 321px)and (max-width: 767px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .top {
+        background-size: cover;
+        height: auto;
+        width:100%;
+    }
+
+    .tagline {
+        font-size: 2em;
+        margin-left: 3%;
+    }
+
+    .subtitle {
+        font-size: 2em;
+        text-align: center;
+        margin-left: 3%;
+    }
+
+    .ingredientSearch {
+        margin: 2em;
+        height: 40em;
+    }
+
+    .ingredients {
+        height: 30em;
+        width: 100%;
+    }
+
+    .recipeRow {
+        margin: 4em;
+       
+
+    }
+
+    .recipeLink {
+        font-size: 2em;
+        margin-top: 1em;
+    }
+
+    .recipeSearch {
+        margin: 2em;
+        font-size: 1em;
+    }
+
+    .printSec {
+        background-size: contain;
+        height: 50em;
+        margin-top: 4em;
+    }
+
+        .printSec .printList {
+            margin-top: 10em;
+        }
+
+        .printSec .ingrSub {
+            text-align: center;
+            margin-top: 3em;
+            margin-left: 0;
+        }
+
+    .social {
+        margin-bottom: 2em;
+    }
+
+    .socialmedia {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+        margin-bottom: auto;
+    }
+    .bottomnav{
+        font-size: small;
+    }
+        .bottomnav a {
+            position: relative;
+            color: #444444;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 1.3em;
+        }
+}
+
+
+/*
+
+.footer_column {
+	width: 100%;
+	margin-top: 0px;
+}
+
+.footer_column {
+	width: 100%;
+}
+}
+*/
+
+/* Small Desktops */
+@media (min-width: 768px) and (max-width: 1096px) {
+
+    .container{
+        width: 100%;
+    }
+
+    .top{
+        width: 100% !important;
+    }
+
+    .tagline {
+        font-size: 2em;
+        text-align: center;
+        color: #000000;
+        margin-top: .2em;
+        margin-left: 3%;
+    }
+
+    .subtitle {
+        font-size: 2em;
+        text-align: center;
+        margin-left: 3%;
+    }
+
+    .ingredients {
+        margin: 2em;
+        width: 100%;
+    }
+
+    .ingredientSearch {
+        margin: 2em;
+        height: 60em;
+    }
+
+
+    .recipeRow {
+        /*margin-bottom: 4em;*/
+       
+    }
+
+    .recipeLink {
+        font-size: 2em;
+        margin-top: 10em;
+        margin-bottom: 3em;
+    }
+
+    .recipeSearch {
+        margin: 2em;
+        font-size: 1em;
+    }
+
+    .printSec {
+        background-size: cover;
+        height: 35em;
+        margin-top: 10em;
+    }
+
+        .printSec .printList {
+            margin-top: 5em;
+            margin-left: 12%;
+        }
+
+        .printSec .ingrSub {
+            text-align: center;
+            margin-top: 3em;
+            margin-bottom: 3em;
+        }
+
+    .social {
+        margin-bottom: 2em;
+    }
+    .multiline {
+        white-space: pre-wrap;
+    }
+    .bottomnav a {
+        position: relative;
+        color: #444444;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 1.3em;
+    }
+ 
+}

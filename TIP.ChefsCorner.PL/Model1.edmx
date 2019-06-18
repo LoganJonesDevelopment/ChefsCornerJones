@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TIP.ChefsCorner.DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblIngredients">
+          <Key>
+            <PropertyRef Name="in_Id" />
+          </Key>
+          <Property Name="in_Id" Type="int" Nullable="false" />
+          <Property Name="in_Description" Type="varchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMeasures">
+          <Key>
+            <PropertyRef Name="ms_Id" />
+          </Key>
+          <Property Name="ms_Id" Type="int" Nullable="false" />
+          <Property Name="ms_Description" Type="varchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRecipe">
+          <Key>
+            <PropertyRef Name="rc_Id" />
+          </Key>
+          <Property Name="rc_Id" Type="int" Nullable="false" />
+          <Property Name="rc_Image" Type="image" Nullable="false" />
+          <Property Name="rc_Name" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="rc_Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="rc_Directions" Type="varchar(max)" Nullable="false" />
+          <Property Name="us_Id" Type="int" Nullable="false" />
+          <Property Name="rc_Ingredients" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRecipeIngredients">
+          <Key>
+            <PropertyRef Name="ri_Id" />
+          </Key>
+          <Property Name="ri_Id" Type="int" Nullable="false" />
+          <Property Name="ri_Quantity" Type="int" Nullable="false" />
+          <Property Name="ms_Id" Type="int" Nullable="false" />
+          <Property Name="ri_Notes" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="in_Id" Type="int" Nullable="false" />
+          <Property Name="rc_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="us_Id" />
+          </Key>
+          <Property Name="us_Id" Type="int" Nullable="false" />
+          <Property Name="us_ScreenName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="us_Email" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="us_Pass" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TIPChefsCornerDBModelStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblIngredients" EntityType="Self.tblIngredients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMeasures" EntityType="Self.tblMeasures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRecipe" EntityType="Self.tblRecipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRecipeIngredients" EntityType="Self.tblRecipeIngredients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TIP.ChefsCorner.DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblIngredient">
+          <Key>
+            <PropertyRef Name="in_Id" />
+          </Key>
+          <Property Name="in_Id" Type="Int32" Nullable="false" />
+          <Property Name="in_Description" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMeasure">
+          <Key>
+            <PropertyRef Name="ms_Id" />
+          </Key>
+          <Property Name="ms_Id" Type="Int32" Nullable="false" />
+          <Property Name="ms_Description" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRecipeIngredient">
+          <Key>
+            <PropertyRef Name="ri_Id" />
+          </Key>
+          <Property Name="ri_Id" Type="Int32" Nullable="false" />
+          <Property Name="ri_Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ms_Id" Type="Int32" Nullable="false" />
+          <Property Name="ri_Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="in_Id" Type="Int32" Nullable="false" />
+          <Property Name="rc_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="us_Id" />
+          </Key>
+          <Property Name="us_Id" Type="Int32" Nullable="false" />
+          <Property Name="us_ScreenName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="us_Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="us_Pass" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ChefsCornerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+          <EntitySet Name="tblIngredients" EntityType="Self.tblIngredient" />
+          <EntitySet Name="tblMeasures" EntityType="Self.tblMeasure" />
+          <EntitySet Name="tblRecipeIngredients" EntityType="Self.tblRecipeIngredient" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
+          <EntitySet Name="tblRecipes" EntityType="TIP.ChefsCorner.DBModel.tblRecipe" />
+        </EntityContainer>
+        <EntityType Name="tblRecipe">
+          <Key>
+            <PropertyRef Name="rc_Id" />
+          </Key>
+          <Property Name="rc_Id" Type="Int32" Nullable="false" />
+          <Property Name="rc_Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="rc_Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="rc_Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rc_Directions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="us_Id" Type="Int32" Nullable="false" />
+          <Property Name="rc_Ingredients" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TIPChefsCornerDBModelStoreContainer" CdmEntityContainer="ChefsCornerEntities">
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="TIP.ChefsCorner.DBModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblIngredients">
+            <EntityTypeMapping TypeName="TIP.ChefsCorner.DBModel.tblIngredient">
+              <MappingFragment StoreEntitySet="tblIngredients">
+                <ScalarProperty Name="in_Id" ColumnName="in_Id" />
+                <ScalarProperty Name="in_Description" ColumnName="in_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMeasures">
+            <EntityTypeMapping TypeName="TIP.ChefsCorner.DBModel.tblMeasure">
+              <MappingFragment StoreEntitySet="tblMeasures">
+                <ScalarProperty Name="ms_Id" ColumnName="ms_Id" />
+                <ScalarProperty Name="ms_Description" ColumnName="ms_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRecipeIngredients">
+            <EntityTypeMapping TypeName="TIP.ChefsCorner.DBModel.tblRecipeIngredient">
+              <MappingFragment StoreEntitySet="tblRecipeIngredients">
+                <ScalarProperty Name="ri_Id" ColumnName="ri_Id" />
+                <ScalarProperty Name="ri_Quantity" ColumnName="ri_Quantity" />
+                <ScalarProperty Name="ms_Id" ColumnName="ms_Id" />
+                <ScalarProperty Name="ri_Notes" ColumnName="ri_Notes" />
+                <ScalarProperty Name="in_Id" ColumnName="in_Id" />
+                <ScalarProperty Name="rc_Id" ColumnName="rc_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsers">
+            <EntityTypeMapping TypeName="TIP.ChefsCorner.DBModel.tblUser">
+              <MappingFragment StoreEntitySet="tblUser">
+                <ScalarProperty Name="us_Id" ColumnName="us_Id" />
+                <ScalarProperty Name="us_ScreenName" ColumnName="us_ScreenName" />
+                <ScalarProperty Name="us_Email" ColumnName="us_Email" />
+                <ScalarProperty Name="us_Pass" ColumnName="us_Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRecipes">
+            <EntityTypeMapping TypeName="TIP.ChefsCorner.DBModel.tblRecipe">
+              <MappingFragment StoreEntitySet="tblRecipe">
+                <ScalarProperty Name="rc_Ingredients" ColumnName="rc_Ingredients" />
+                <ScalarProperty Name="us_Id" ColumnName="us_Id" />
+                <ScalarProperty Name="rc_Directions" ColumnName="rc_Directions" />
+                <ScalarProperty Name="rc_Description" ColumnName="rc_Description" />
+                <ScalarProperty Name="rc_Name" ColumnName="rc_Name" />
+                <ScalarProperty Name="rc_Image" ColumnName="rc_Image" />
+                <ScalarProperty Name="rc_Id" ColumnName="rc_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

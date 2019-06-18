@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TIP.ChefsCorner.BL.RecipeSearch>
+<a name="top"></a>
+
+<div class="container bodyContainer">
+    <h1 style="text-align:center; font-weight:bold">Recipe Search</h1>
+    
+    @using (Html.BeginForm("Index", "RecipeSearch"))
+    {
+        <input type="text" placeholder="(ex: Eggs, Sugar, Flour)" name="recipe" class="search" alt="Enter an ingredient"/>
+        <input type="submit" class="button" value="Go" alt="Search for Recipes"/>
+    }
+</div>
+<h3 class="ml-5">@ViewBag.Message</h3>
+
+
+    <div class="row">
+        <div class="RecipeImg col-2">
+          
+        </div>
+       
+        <div class="col-8 mx-auto ">
+            @foreach (var item in Model)
+            {
+            <div class="recipeborder">
+                <div class="recipeSearch">
+                    <a href="@Url.Action("Details", "RecipeDetails",new { id = item.id })">  @Html.DisplayFor(modelItem => item.title)</a>
+                </div>
+
+                <div class="recipeRow">
+                    <a href="@Url.Action("Details", "RecipeDetails",new { id = item.id })"> <img class="img-fluid " src="@item.image" alt="Image of Recipe" /></a>
+                </div>
+                <div class="recipeSearch ">
+                    <h5 style="font-weight:bold;" class="mb-5">Likes:  @Html.DisplayFor(modelItem => item.likes)</h5>
+                </div>
+            </div>
+            }
+
+        </div>
+        
+        <div class="RecipeImg col-2">
+           
+        </div>
+    </div>
+
+<div style="text-align:center" class="backtotop">
+    <a href="#top">Back to top</a>
+</div>

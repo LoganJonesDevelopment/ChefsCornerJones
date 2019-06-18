@@ -1,0 +1,134 @@
+﻿@model IEnumerable<TIP.ChefsCorner.BL.IngredientSearch>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!------ Include the above in your HEAD tag ---------->
+<style>
+
+
+    /*.myButton {
+        -moz-box-shadow: 0px 0px 50px 0px #3dc21b;
+        -webkit-box-shadow: 0px 0px 50px 0px #3dc21b;
+        box-shadow: 0px 0px 50px 0px #3dc21b;
+        background-color: #44c767;
+        -moz-border-radius: 16px;
+        -webkit-border-radius: 16px;
+        border-radius: 16px;
+        border: 2px solid #18ab29;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Verdana;
+        font-size: 17px;
+        padding: 9px 31px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #2f6627;
+    }*/
+
+    /*.myButton:hover {
+            background-color: #5cbf2a;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+    .search {
+        border-radius: 15px;
+        text-align: center;
+        background-color: #DCFE33;
+    }*/
+
+
+
+
+</style>
+
+<div class="container bodyContainer">
+    <div class="substituteBackground">
+
+
+        <h1 style="text-align:center;  font-family:cursive;" class="m-b-50" ;>Ingredient Search </h1>
+
+
+
+        @using (Html.BeginForm("Index", "IngredientSearch"))
+        {
+            <input type="text" placeholder="Enter Ingredient Name" name="ingred" class="search" />
+            <input type="submit" class="button" value="Go" />
+            <br />
+            <br />
+
+
+            <h3>@ViewBag.Message</h3>
+
+            if (Model != null)
+            {
+
+
+                foreach (var item in Model)
+                {
+                    <div class="mx-5 section">
+
+                        <h2 class="mb-5 uppercase">@Html.DisplayFor(model => item.Name)</h2>
+
+                    </div>
+
+                    <div id="printableArea">
+                        <img src="https://spoonacular.com/cdn/ingredients_100x100/@Html.DisplayFor(model => item.Image)" style="width:20%" />
+                        <center>
+                            <button class="btn btn-primary hidden-print" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+                         
+
+                        </center>
+                    </div>
+                }
+
+
+                @*if (Model != null)
+                    {
+
+
+                        foreach (var item in Model.Products)
+                        {
+
+                            <img src="@Html.DisplayFor(model => item.Image)" alt="ingredient image" />
+                            <h3 class="list-group-horizontal-lg mb-5">@Html.DisplayFor(model => item.Title)</h3>
+
+
+                         }
+                    }*@
+
+            }
+        }
+
+    </div>
+    
+
+
+
+</div>
+
+
+
+<script>
+    function myFunction() {
+        window.print();
+    }
+
+
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+
+
+</script>

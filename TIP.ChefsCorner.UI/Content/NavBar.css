@@ -1,0 +1,45 @@
+﻿body {
+    margin: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #f2ffcc;
+}
+
+    .topnav a {
+        float: left;
+        color: #444444;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 2.5em;
+    }
+
+        .topnav a:hover {
+            background-color: white;
+            color: #444444;
+        }
+
+        .topnav a.active {
+            background-color: white;
+            color: white;
+        }
+
+
+    Footer {
+        font-weight: bold;
+        color: #606060;
+    }
+@media (min-width: 900px) and (max-width: 1396px) {
+    .topnav a {
+        font-size: 1.5em;
+    }
+}
+    @media (min-width: 300px) and (max-width: 900px) {
+
+        .topnav a {
+            font-size: 1em;
+        }
+    }

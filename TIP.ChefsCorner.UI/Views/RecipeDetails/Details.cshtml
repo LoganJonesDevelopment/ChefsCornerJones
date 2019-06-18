@@ -1,0 +1,150 @@
+﻿@model IEnumerable<TIP.ChefsCorner.BL.RecipeDetails>
+
+@*@model TIP.ChefsCorner.BL.RecipeDetails*@
+
+<script src="/Scripts/modernizr-2.8.3.js"></script>
+<div class="container bodyContainer">
+    <h1 style="text-align:center; margin-bottom: 2em; font-family: cursive;">Recipe Details </h1>
+
+    <style>
+        /*      .section1 {
+            display: inline-block;
+        }
+
+        .section2 {
+            display: inline-block;
+            width: 100px;
+        }
+
+        .section3 {
+            display: inline-block;
+            width: 75%;
+        }
+
+        .section4 {
+            display: inline-block;
+        }
+
+    */
+
+        .img-fluid {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: 100;
+        }
+
+        .parent {
+            text-align: center;
+        }
+
+        body {
+            background-color: #d9e4b6;
+        }
+    </style>
+</div>
+@foreach (var item in Model)
+
+{<div class="container">
+
+     <div class="row">
+         <div class="col-lg-7" style="border-style: solid; border-width: 1px; padding-top:50px;">
+             <h1 class="title" style="font-family: cursive;">
+                 @Html.DisplayFor(model => item.Title)
+             </h1>
+             <br />
+             <div>
+                 <img class="img-fluid" src=@Html.DisplayFor(model =>item.Image) />
+             </div>
+             <br />
+             <div class="parent">
+                 <div class="section1">
+                     @Html.DisplayName("Vegan")
+                     @Html.DisplayFor(model => item.Vegan)
+                     @Html.DisplayName("Vegetarian")
+                     @Html.DisplayFor(model => item.Vegetarian)
+                     @Html.DisplayName("Very Healthy")
+                     @Html.DisplayFor(model => item.VeryHealthy)
+                     @Html.DisplayName("Very Popular")
+                     @Html.DisplayFor(model => item.VeryPopular)
+                     @Html.DisplayName("Ketogenic")
+                     @Html.DisplayFor(model => item.Ketogenic)
+                     @Html.DisplayName("Weight Watcher:")
+                     @Html.DisplayFor(model => item.WeightWatcherSmartPoints)
+                 </div>
+                 <br />
+
+                 <div class="section2">
+                     @Html.DisplayName("Preparation Minutes")
+                     @Html.DisplayFor(model => item.PreparationMinutes)
+                     @Html.DisplayName("Servings")
+                     @Html.DisplayFor(model => item.Servings)
+                 </div>
+                 <br />
+                 <br />
+             </div>
+         </div>
+         <div class="col-lg-1"></div>
+
+             <div class="col-lg-4" style="border-style: solid; border-width: 1px;">
+                 <div>
+                     <div style="text-align:center;">
+                         <h3 style="font-family: cursive;">Ingredient List</h3>
+
+                         @foreach (var ingred in item.ExtendedIngredients)
+                         {
+                             <img src="https://spoonacular.com/cdn/ingredients_100x100/@Html.DisplayFor(model =>ingred.Image) " />
+                             <div>
+                                 @Html.DisplayName("Aisle:")
+                                 @Html.DisplayFor(model => ingred.Aisle)
+                             </div>
+                             <div>
+                                 @Html.DisplayFor(model => ingred.OriginalString)
+                             </div>
+
+
+                         }
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <br />
+         <div class="buttonCenter" style="text-align:center;">
+             <button class="btn btn-primary hidden-print" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print" aria-hidden="true" style="text-align:center;"></span> Print</button>
+         </div>
+         <br />
+         <div class="section3" id="printableArea">
+             <h3 style="text-align: center;">Instructions</h3>
+             <br />
+             @Html.DisplayFor(model => item.Instructions)
+         </div>
+     </div>
+}
+<div class="sharethis-inline-share-buttons"></div>
+
+
+
+<script>
+    function myFunction() {
+        window.print();
+    }
+
+
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+    }
+
+
+</script>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Chef's Corner</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap.css")
+    @Scripts.Render("~/bundles/modernizr")
+ 
+</head>
+
+
+<body>
+
+    <!--Navbar section-->
+    <nav class="navbar navbar-expand-md sticky-top topnav">
+
+        <button type="button" class="navbar-toggler d-md-none ml-auto" data-toggle="collapse" data-target="#navigation" aria-expanded="false"><span class="sr-only">Navigation</span>&#9776;</button>
+        <div class=" nav navbar-nav collapse navbar-collapse">
+            <a runat="server" href="~/">Home</a>
+            <a runat="server" href="~/Home/About">About Us</a>
+            <a runat="server" href="~/recipe">Enter Your Recipes</a>
+            <a runat="server" href="~/Home/Contact">Contact Us</a>
+
+        </div>
+            <div class="nav navbar-nav collapse navbar-collapse ">
+                
+                <a runat="server" href="~/login/login" class="ml-auto">Login</a>
+                <a runat="server" href="~/login/create" class="mr-0">Create Account</a>
+            </div>
+  </nav>
+    
+    <hr style="border: 6px solid#86b300; color:#f2ffcc;" />
+
+    @RenderBody()
+
+    <hr style="border: 6px solid#86b300;" />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Chef's Corner</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
